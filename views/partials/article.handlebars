@@ -1,0 +1,19 @@
+<div class="col-12">
+    <div class="card cardContainer hvr-sink">
+
+        <div class="card-header">
+            <p class="left-align">{{ title }}</p>
+        </div>
+
+        <div class="card-body">
+            <a class="hvr-grow" href="{{ link }}" target="_blank">View
+                Article</a>
+            <a class="view-article modal-trigger hvr-grow" href="#modal_{{_id}}" data-id="{{ _id }}">Notes</a>
+            {{#if saved }}
+            <a class="unsave-article hvr-grow" data-id="{{ _id }}">Remove Article</a>
+            {{else}}
+            <a class="save-article hvr-grow" data-id="{{ _id }}">Save Article</a>
+            {{/if}}
+        </div>
+    </div>
+</div>

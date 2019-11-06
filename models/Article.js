@@ -1,23 +1,28 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const articleSchema = new Schema({
-  headline: {
+const ArticleSchema = new Schema({
+  title: {
     type: String,
+    required: true,
     unique: true
   },
-  summary: String,
-  storyUrl: String,
-  imgUrl: String,
-  byLine: String,
+  link: {
+    type: String,
+    required: true,
+    unique: true
+  },
   saved: {
     type: Boolean,
+    required: true,
     default: false
   },
-  notes: [{
+  note: {
     type: Schema.Types.ObjectId,
     ref: "Note"
-  }]
+  }
 });
 
-const Article = module.exports = mongoose.model('Article', articleSchema);
+const Article = mongoose.model("Article", ArticleSchema);
+
+module.exports = Article;
